@@ -6,13 +6,14 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.banking.base.entity.BaseEntity;
+
 import java.sql.Date;
 
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
-public class bank extends BaseEntity<Long> {
+public class Bank extends BaseEntity<Long> {
 
     @Column(nullable = false)
     private String name;
@@ -23,7 +24,7 @@ public class bank extends BaseEntity<Long> {
     @Column (nullable = false, unique = true, updatable = false)
     private Date bankCreateDate;
 
-    public bank(String name, long bankCode, Date bankCreateDate) {
+    public Bank(String name, long bankCode, Date bankCreateDate) {
         this.name = name;
         this.bankCode = bankCode;
         this.bankCreateDate = bankCreateDate;
@@ -31,7 +32,7 @@ public class bank extends BaseEntity<Long> {
 
     @Override
     public String toString() {
-        return "bank{" +
+        return "Bank{" +
                 "name='" + name + '\'' +
                 ", bankCode=" + bankCode +
                 ", bankCreateDate=" + bankCreateDate +

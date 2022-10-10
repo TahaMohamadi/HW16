@@ -14,7 +14,7 @@ import java.sql.Date;
 @Getter
 @Setter
 @NoArgsConstructor
-public class person extends BaseEntity<Long> {
+public class Person extends BaseEntity<Long> {
 
 
     @Column(nullable = false)
@@ -26,9 +26,10 @@ public class person extends BaseEntity<Long> {
     @Column (nullable = false, unique = true, updatable = false)
     private long phoneNumber;
 
+    @Column(nullable = false)
     private Date birthDate;
 
-    public person(String fullName, long nationalCode, long phoneNumber, Date birthDate) {
+    public Person(String fullName, long nationalCode, long phoneNumber, Date birthDate) {
         this.fullName = fullName;
         this.nationalCode = nationalCode;
         this.phoneNumber = phoneNumber;
